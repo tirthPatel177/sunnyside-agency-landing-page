@@ -9,13 +9,13 @@ font-family: 'Fraunces', serif; */
 
 
 /* Color Setup */
-:root{
+
+:root {
     --primary-softRed: hsl(7, 99%, 70%);
     --primary-yellow: hsl(51, 100%, 49%);
     --primary-dark-desaturated-cyan: hsl(167, 40%, 24%);
     --primary-darkBlue: hsl(198, 62%, 26%);
-    --primaty-dark-moderate-cyan: hsl(168, 34%, 41%); 
-
+    --primaty-dark-moderate-cyan: hsl(168, 34%, 41%);
     --neutral-veryDark-desaturated-blue: hsl(212, 27%, 19%);
     --neutral-veryDark-grayish-blue: hsl(213, 9%, 39%);
     --neutral-dark-grayish-blue: hsl(232, 10%, 55%);
@@ -23,17 +23,17 @@ font-family: 'Fraunces', serif; */
     --neutral-white: hsl(0, 0%, 100%);
 }
 
-
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Barlow', serif;
     font-size: 18px;
+    width: 100%;
+    height: 100%;
 }
 
 header {
@@ -48,58 +48,61 @@ nav {
     padding: 30px;
 }
 
-.content-container{
+.content-container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+    height: 100vh;
 }
 
-.content-container .image{
+.content-container .image {
     grid-row: 1;
     text-align: center;
-    display:block;
-    object-fit: fill;
+    display: block;
     max-width: 100%;
-    height: auto;
-    
+    height: 100%;
+    background-position: center;
+    background-size: cover;
 }
 
-.content-container div{
+.content-container div {
     grid-row: 2;
 }
 
 .egg {
-    background-image: url('../images/mobile/image-transform.jpg') no-repeat center;
+    background-image: url('../images/mobile/image-transform.jpg');
 }
 
+.pinkcup {
+    background-image: url('../images/mobile/image-stand-out.jpg');
+}
 
 @media (min-width: 750px) {
     header {
         background: url("../images/desktop/image-header.jpg") no-repeat center;
         background-size: cover;
     }
-
-    .content-container{
+    .content-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
+        height: 80vh;
     }
-
-    .left{
+    .left {
         direction: rtl;
     }
-
-    .content-container .image{
+    .content-container .image {
         grid-column: 1;
         grid-row: 1;
     }
-
-    .content-container div{
+    .content-container div {
         grid-column: 2;
         grid-row: 1;
     }
-
     .egg {
         background-image: url("../images/desktop/image-transform.jpg");
+    }
+    .pinkcup {
+        background-image: url('../images/desktop/image-transform.jpg');
     }
 }
